@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:water_products/Feature/onBorading/presentation/screens/on_boarding_screen.dart';
+
+import '../../Feature/auth/presentation/screens/login_screen.dart';
+import 'base_route.dart';
+
+abstract class AppRoute {
+  static const String loginScreen = "/Login Screen";
+  static const String onBoardingScreen = "/On Boarding Screen";
+  static const String mainScreen = "/Main Screen";
+  static const String waterProductDetails = "/ Water Product Details";
+  static const String contactUs = "/Contackt Us";
+  static const String checkOutScreen = "/ Check Out Screen";
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case onBoardingScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const OnBoardingScreen();
+          },
+        );
+      case loginScreen:
+        return BaseRoute(
+          pageBuilder: (_, __, ___) {
+            return LoginScreen();
+          },
+        );
+    }
+    return null;
+  }
+}
