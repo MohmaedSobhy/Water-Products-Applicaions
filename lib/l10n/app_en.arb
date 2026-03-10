@@ -40,5 +40,9 @@
   "delivering": "Delivering",
   "orderDelivered": "Order Delivered",
   "enterPassword": "Enter Password",
-  "enterEmail": "Enter Your Email"
+  "enterEmail": "Enter Your Email",
+  "register": "Register",
+  "dontHaveAccount": "Don't have an account?",
+  "haveAccount": "Already have an account?",
+  "login": "Login"
 }

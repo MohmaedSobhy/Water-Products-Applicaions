@@ -349,6 +349,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter Your Email'**
   String get enterEmail;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
+  /// No description provided for @haveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get haveAccount;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
 }
 
 class _AppLocalizationsDelegate

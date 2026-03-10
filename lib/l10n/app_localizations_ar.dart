@@ -138,4 +138,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get register => 'تسجيل';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get haveAccount => 'هل لديك حساب بالفعل؟';
+
+  @override
+  String get login => 'تسجيل الدخول';
 }

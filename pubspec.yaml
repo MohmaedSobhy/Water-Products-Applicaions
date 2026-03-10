@@ -39,15 +39,16 @@ dev_dependencies:
   dio: ^5.9.2
   flutter_bloc: ^9.1.1
   flutter_lints: ^6.0.0
-  flutter_secure_storage: ^10.0.0
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.7
+  flutter_secure_storage: ^10.0.0
   flutter_svg: ^2.2.4
-  intl: any
   flutter_test:
     sdk: flutter
   get_it: ^9.2.1
   google_fonts: ^8.0.2
+  intl: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

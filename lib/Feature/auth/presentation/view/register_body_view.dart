@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water_products/Feature/auth/presentation/controller/auth_cubit.dart';
 import 'package:water_products/Feature/auth/presentation/controller/auth_state.dart';
 import 'package:water_products/core/extension/app_localization_extension.dart';
+import 'package:water_products/core/routes/app_route.dart';
 import 'package:water_products/core/utils/app_assets.dart';
 import 'package:water_products/core/widgets/custome_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -89,17 +90,23 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
                     },
                     child: (state is AuthLoadingState)
                         ? const CircularProgressIndicator(color: Colors.white)
-                        : Text("Register"),
+                        : Text(context.local.register),
                   );
                 },
               ),
-
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already Have Account ?"),
-                  TextButton(onPressed: () {}, child: Text("Login?")),
+                  Text(context.local.haveAccount),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).pushReplacementNamed(AppRoute.loginScreen);
+                    },
+                    child: Text(context.local.login),
+                  ),
                 ],
               ),
             ],

@@ -40,5 +40,9 @@
   "delivering": "جاري التوصيل",
   "orderDelivered": "تم توصيل الطلب",
   "enterPassword": "أدخل كلمة المرور",
-  "enterEmail": "أدخل بريدك الإلكتروني"
+  "enterEmail": "أدخل بريدك الإلكتروني",
+  "register": "تسجيل",
+  "dontHaveAccount": "ليس لديك حساب؟",
+  "haveAccount": "هل لديك حساب بالفعل؟",
+  "login": "تسجيل الدخول"
 }

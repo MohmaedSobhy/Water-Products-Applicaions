@@ -139,4 +139,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterEmail => 'Enter Your Email';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get dontHaveAccount => 'Don\'t have an account?';
+
+  @override
+  String get haveAccount => 'Already have an account?';
+
+  @override
+  String get login => 'Login';
 }
