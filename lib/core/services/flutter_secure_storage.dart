@@ -5,6 +5,7 @@ class StorageHelper {
 
   static const accessTokenKey = "access_token";
   static const refreshTokenKey = "refresh_token";
+  static const onBoarding = "onBoarding";
 
   static init() async {
     storage = const FlutterSecureStorage();
@@ -45,5 +46,9 @@ class StorageHelper {
 
   static Future<void> saveRefreshToken(String token) async {
     await storage.write(key: refreshTokenKey, value: token);
+  }
+
+  static Future<void> saveOnBoarding() async {
+    await storage.write(key: onBoarding, value: "Appeared");
   }
 }
