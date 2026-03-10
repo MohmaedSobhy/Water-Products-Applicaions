@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
   GetItServices.setUp();
-  //  await RoutesHelper.checkOnBoarding();
+  await RoutesHelper.checkOnBoarding();
   // runApp(DevicePreview(enabled: true, builder: (context) => const WaterApp()));
   runApp(WaterApp());
 }

@@ -17,9 +17,7 @@ class WaterApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       onGenerateRoute: AppRoute.onGenerateRoute,
-      initialRoute: (RoutesHelper.isAppeared)
-          ? AppRoute.loginScreen
-          : AppRoute.onBoardingScreen,
+      initialRoute: RoutesHelper.currentRoute,
     );
   }
 }
