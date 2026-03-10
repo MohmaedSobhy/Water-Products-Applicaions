@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_products/Feature/auth/presentation/screens/login_screen.dart';
+import 'package:water_products/Feature/auth/presentation/screens/register_screen.dart';
 import 'package:water_products/core/utils/app_assets.dart';
 import 'package:water_products/core/utils/app_string.dart';
 import '../../data/model/page_image_model.dart';
@@ -74,7 +75,7 @@ class _OnBoardingBodyViewState extends State<OnBoardingBodyView> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginScreen();
+                          return RegisterScreen();
                         },
                       ),
                     );

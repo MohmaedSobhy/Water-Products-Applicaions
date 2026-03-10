@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:water_products/Feature/auth/presentation/controller/auth_cubit.dart';
 import 'package:water_products/Feature/auth/presentation/controller/auth_state.dart';
-import 'package:water_products/core/services/get_it_services.dart';
+import 'package:water_products/core/extension/app_localization_extension.dart';
 import 'package:water_products/core/utils/app_assets.dart';
-import 'package:water_products/core/utils/app_string.dart';
 import 'package:water_products/core/widgets/custome_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../data/repository/auth_respository_implmentation.dart';
 
 class RegisterBodyView extends StatefulWidget {
   const RegisterBodyView({super.key});
@@ -37,7 +34,7 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
               Image(image: AssetImage(AppImageAssets.appLogo)),
               CustomeTextFormField(
                 inputType: TextInputType.name,
-                hint: "Name",
+                hint: context.local.name,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please Enter Your Name";
@@ -51,7 +48,7 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
               const SizedBox(height: 10),
               CustomeTextFormField(
                 inputType: TextInputType.emailAddress,
-                hint: "Email",
+                hint: context.local.enterEmail,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please Enter Your Email";
@@ -68,8 +65,8 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
               ),
               const SizedBox(height: 10),
               CustomeTextFormField(
-                inputType: TextInputType.name,
-                hint: "Password",
+                inputType: TextInputType.visiblePassword,
+                hint: context.local.enterPassword,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please Enter Your Password";

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:water_products/Feature/auth/presentation/screens/register_screen.dart';
-import 'package:water_products/Feature/auth/presentation/view/register_body_view.dart';
-import 'package:water_products/Feature/onBorading/presentation/screens/on_boarding_screen.dart';
 import 'package:water_products/core/theme/app_theme.dart';
+import 'package:water_products/l10n/app_localizations.dart';
+
+import 'core/routes/app_route.dart';
 
 class WaterApp extends StatelessWidget {
   const WaterApp({super.key});
@@ -12,7 +12,11 @@ class WaterApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      home: RegisterScreen(),
+      initialRoute: AppRoute.onBoardingScreen,
+      locale: Locale('ar'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      onGenerateRoute: AppRoute.onGenerateRoute,
     );
   }
 }
