@@ -21,7 +21,7 @@ class ImageSliderCard extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: Colors.black.withAlpha((255 * 0.25).toInt()),
+              color: Colors.black.withAlpha((255 * 0.15).toInt()),
             ),
           ),
         ],
