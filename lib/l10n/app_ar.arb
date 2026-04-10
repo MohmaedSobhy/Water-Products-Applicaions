@@ -44,5 +44,6 @@
   "register": "تسجيل",
   "dontHaveAccount": "ليس لديك حساب؟",
   "haveAccount": "هل لديك حساب بالفعل؟",
-  "login": "تسجيل الدخول"
+  "login": "تسجيل الدخول",
+  "favourite": "المفضلة"
 }

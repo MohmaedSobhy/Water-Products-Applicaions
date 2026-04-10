@@ -3,7 +3,7 @@ import 'package:water_products/Feature/home/data/model/image_slider_model.dart'
     show ImageGalleryModel;
 import 'package:carousel_slider/carousel_slider.dart';
 
-import '../../widgets/image_slider_card.dart';
+import '../widgets/image_slider_card.dart';
 
 class ImageSliderView extends StatefulWidget {
   const ImageSliderView({super.key});
@@ -20,7 +20,7 @@ class _ImageStateSlider extends State<ImageSliderView> {
     return CarouselSlider(
       options: CarouselOptions(
         autoPlay: true,
-        height: 200,
+        height: 185,
         enlargeCenterPage: true,
         aspectRatio: 2.0,
         onPageChanged: (index, reason) {},

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_products/Feature/Favourite/presentation/screens/favourite_screen.dart';
 import 'package:water_products/Feature/auth/presentation/screens/register_screen.dart';
 import 'package:water_products/Feature/home/presentation/screens/main_screen.dart';
 import 'package:water_products/Feature/onBorading/presentation/screens/on_boarding_screen.dart';
@@ -14,6 +15,7 @@ abstract class AppRoute {
   static const String waterProductDetails = "/ Water Product Details";
   static const String contactUs = "/Contackt Us";
   static const String checkOutScreen = "/ Check Out Screen";
+  static const String favouriteScreen = "/ Favourite Screen";
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case onBoardingScreen:
@@ -38,6 +40,12 @@ abstract class AppRoute {
         return BaseRoute(
           pageBuilder: (_, __, ___) {
             return const MainScreen();
+          },
+        );
+      case favouriteScreen:
+        return BaseRoute(
+          pageBuilder: (_, __, ___) {
+            return const FavouriteScreen();
           },
         );
     }

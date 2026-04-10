@@ -150,4 +150,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get login => 'تسجيل الدخول';
+
+  @override
+  String get favourite => 'المفضلة';
 }
