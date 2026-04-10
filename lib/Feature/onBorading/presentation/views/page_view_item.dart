@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../core/theme/app_text_style.dart';
 import '../../data/model/page_image_model.dart';
@@ -12,7 +13,7 @@ class PageViewItem extends StatelessWidget {
     return Column(
       children: [
         const Spacer(),
-        Image.asset(model.imagePath, height: 250),
+        Lottie.asset(model.imagePath, height: 300),
         const Spacer(),
         Text(
           model.message,

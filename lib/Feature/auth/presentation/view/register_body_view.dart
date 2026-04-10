@@ -7,6 +7,8 @@ import 'package:water_products/core/utils/app_assets.dart';
 import 'package:water_products/core/widgets/custome_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/theme/app_colors.dart';
+
 class RegisterBodyView extends StatefulWidget {
   const RegisterBodyView({super.key});
 
@@ -34,10 +36,13 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
             listener: (context, state) {
               if (state is AuthSuccessState) {
                 Navigator.of(context).pushReplacementNamed(AppRoute.mainScreen);
+
+                //ToDo Show Notifcation Success
               } else if (state is AuthFailureState) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text("Error Message Register")),
                 );
+                //ToDo Show Notifcation Failure
               }
             },
             child: ListView(
@@ -115,7 +120,13 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
                           context,
                         ).pushReplacementNamed(AppRoute.loginScreen);
                       },
-                      child: Text(context.local.login),
+                      child: Text(
+                        context.local.login,
+                        style: TextStyle(
+                          color: AppColor.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

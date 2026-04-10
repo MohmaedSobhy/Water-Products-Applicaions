@@ -1,10 +1,9 @@
 abstract class ImageGalleryModel {
   static List<String> getAllImages() {
     return [
-      "assets/images/image_slider_one.jpeg",
-      "assets/images/image_slider_two.jpeg",
-      "assets/images/image_slider_four.jpeg",
-      "assets/images/image_slider_four.jpeg",
+      "assets/images/ecommerce-01.jpg",
+      "assets/images/ecommerce-02.jpg",
+      "assets/images/ecommerce-03.jpg",
     ];
   }
 }

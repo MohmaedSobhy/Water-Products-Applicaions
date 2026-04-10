@@ -9,13 +9,13 @@ abstract class AppTheme {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       elevation: 0,
       type: BottomNavigationBarType.fixed,
-      backgroundColor: AppColor.blue2,
+      backgroundColor: AppColor.primaryColor,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         alignment: AlignmentDirectional.center,
         minimumSize: WidgetStateProperty.all<Size>(Size(double.infinity, 50)),
-        backgroundColor: WidgetStateProperty.all<Color>(AppColor.blue),
+        backgroundColor: WidgetStateProperty.all<Color>(AppColor.primaryColor),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),

@@ -42,21 +42,21 @@ class _OnBoardingBodyViewState extends State<OnBoardingBodyView> {
               children: [
                 PageViewItem(
                   model: PageImageModel(
-                    imagePath: AppImageAssets.waterDay,
+                    imagePath: AppImageAssets.firstonBoardingLottie,
                     message: AppString.welcomeTitle,
                     content: AppString.welcomeContent,
                   ),
                 ),
                 PageViewItem(
                   model: PageImageModel(
-                    imagePath: AppImageAssets.waterBottel,
+                    imagePath: AppImageAssets.secondonBoardingLottie,
                     message: AppString.chooseAndOrderTitle,
                     content: AppString.chooseAndOrderContent,
                   ),
                 ),
                 PageViewItem(
                   model: PageImageModel(
-                    imagePath: AppImageAssets.deliveryWater,
+                    imagePath: AppImageAssets.thirdonBoardingLottie,
                     message: AppString.reliableServiceTitle,
                     content: AppString.reliableServiceContent,
                   ),

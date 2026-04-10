@@ -23,4 +23,11 @@ abstract class AppImageAssets {
   static const String phoneCall = "assets/icons/phone_call.svg";
   static const String approvedImage = "assets/images/approved.png";
   static const String mapLocation = "assets/images/map_image.png";
+
+  static const String firstonBoardingLottie =
+      "assets/lottie/first_on_boarding.json";
+  static const String secondonBoardingLottie =
+      "assets/lottie/second_on_boarding.json";
+  static const String thirdonBoardingLottie =
+      "assets/lottie/third_on_boarding.json";
 }

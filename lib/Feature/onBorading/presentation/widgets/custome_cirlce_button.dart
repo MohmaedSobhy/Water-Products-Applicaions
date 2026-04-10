@@ -13,7 +13,7 @@ class CustomeCircleButton extends StatelessWidget {
         height: 50,
         width: 50,
         child: CircleAvatar(
-          backgroundColor: AppColor.blue1,
+          backgroundColor: AppColor.primaryColor,
           child: Icon(Icons.arrow_forward_ios, color: AppColor.white),
         ),
       ),

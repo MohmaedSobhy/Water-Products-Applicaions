@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water_products/Feature/auth/presentation/controller/auth_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_products/core/routes/app_route.dart';
+import 'package:water_products/core/theme/app_colors.dart';
 import '../../../../core/extension/app_localization_extension.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/custome_text_form_field.dart';
@@ -90,6 +91,27 @@ class _LoginBodyViewState extends State<LoginBodyView> {
                           : Text(context.local.login),
                     );
                   },
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(context.local.haveAccount),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(
+                          context,
+                        ).pushReplacementNamed(AppRoute.registerScreen);
+                      },
+                      child: Text(
+                        context.local.register,
+                        style: TextStyle(
+                          color: AppColor.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
