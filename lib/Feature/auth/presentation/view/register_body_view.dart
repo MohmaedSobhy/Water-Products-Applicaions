@@ -30,86 +30,97 @@ class _RegisterBodyViewState extends State<RegisterBodyView> {
         create: (context) => authCubit,
         child: Form(
           key: authCubit.formKey,
-          child: ListView(
-            children: [
-              Image(image: AssetImage(AppImageAssets.appLogo)),
-              CustomeTextFormField(
-                inputType: TextInputType.name,
-                hint: context.local.name,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please Enter Your Name";
-                  } else if (value.length >= 30 || value.length <= 5) {
-                    return "Name Must Be At Least 5 Characters";
-                  }
-                  return null;
-                },
-                controller: authCubit.nameController,
-              ),
-              const SizedBox(height: 10),
-              CustomeTextFormField(
-                inputType: TextInputType.emailAddress,
-                hint: context.local.enterEmail,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please Enter Your Email";
-                  } else if (value.length >= 50 || value.length <= 10) {
-                    return "Email Must Be At Least 5 Characters";
-                  } else if (!RegExp(
-                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                  ).hasMatch(value)) {
-                    return "Please Enter A Valid Email";
-                  }
-                  return null;
-                },
-                controller: authCubit.emailController,
-              ),
-              const SizedBox(height: 10),
-              CustomeTextFormField(
-                inputType: TextInputType.visiblePassword,
-                hint: context.local.enterPassword,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please Enter Your Password";
-                  } else if (value.length >= 20 || value.length <= 6) {
-                    return "Password Must Be At Least 8 Characters";
-                  }
-                  return null;
-                },
-                obscureText: true,
-                controller: authCubit.passwordController,
-              ),
-              const SizedBox(height: 15),
-              BlocBuilder<AuthCubit, AuthState>(
-                builder: (context, state) {
-                  return ElevatedButton(
-                    onPressed: () {
-                      if (authCubit.formKey.currentState!.validate()) {
-                        authCubit.registerMethod();
-                      }
-                    },
-                    child: (state is AuthLoadingState)
-                        ? const CircularProgressIndicator(color: Colors.white)
-                        : Text(context.local.register),
-                  );
-                },
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(context.local.haveAccount),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(
-                        context,
-                      ).pushReplacementNamed(AppRoute.loginScreen);
-                    },
-                    child: Text(context.local.login),
-                  ),
-                ],
-              ),
-            ],
+          child: BlocListener<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state is AuthSuccessState) {
+                Navigator.of(context).pushReplacementNamed(AppRoute.mainScreen);
+              } else if (state is AuthFailureState) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Error Message Register")),
+                );
+              }
+            },
+            child: ListView(
+              children: [
+                Image(image: AssetImage(AppImageAssets.appLogo)),
+                CustomeTextFormField(
+                  inputType: TextInputType.name,
+                  hint: context.local.name,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please Enter Your Name";
+                    } else if (value.length >= 30 || value.length <= 5) {
+                      return "Name Must Be At Least 5 Characters";
+                    }
+                    return null;
+                  },
+                  controller: authCubit.nameController,
+                ),
+                const SizedBox(height: 10),
+                CustomeTextFormField(
+                  inputType: TextInputType.emailAddress,
+                  hint: context.local.enterEmail,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please Enter Your Email";
+                    } else if (value.length >= 50 || value.length <= 10) {
+                      return "Email Must Be At Least 5 Characters";
+                    } else if (!RegExp(
+                      r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                    ).hasMatch(value)) {
+                      return "Please Enter A Valid Email";
+                    }
+                    return null;
+                  },
+                  controller: authCubit.emailController,
+                ),
+                const SizedBox(height: 10),
+                CustomeTextFormField(
+                  inputType: TextInputType.visiblePassword,
+                  hint: context.local.enterPassword,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please Enter Your Password";
+                    } else if (value.length >= 20 || value.length <= 6) {
+                      return "Password Must Be At Least 8 Characters";
+                    }
+                    return null;
+                  },
+                  obscureText: true,
+                  controller: authCubit.passwordController,
+                ),
+                const SizedBox(height: 15),
+                BlocBuilder<AuthCubit, AuthState>(
+                  builder: (context, state) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        if (authCubit.formKey.currentState!.validate()) {
+                          authCubit.registerMethod();
+                        }
+                      },
+                      child: (state is AuthLoadingState)
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : Text(context.local.register),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(context.local.haveAccount),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(
+                          context,
+                        ).pushReplacementNamed(AppRoute.loginScreen);
+                      },
+                      child: Text(context.local.login),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

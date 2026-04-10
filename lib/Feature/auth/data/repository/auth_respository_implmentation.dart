@@ -17,7 +17,7 @@ class AuthRespositoryImplmentation implements AuthRespository {
         url: EndPoints.register,
         body: model.toJson(),
       );
-      return Right(UserModel.fromJson(response.data['data']));
+      return Right(UserModel.fromJson(response.data));
     } catch (e) {
       return Left(Failure());
     }
@@ -32,7 +32,7 @@ class AuthRespositoryImplmentation implements AuthRespository {
         url: EndPoints.login,
         body: loginRequest.toJson(),
       );
-      return Right(UserModel.fromJson(response.data['data']));
+      return Right(UserModel.fromJson(response.data));
     } catch (e) {
       return Left(Failure());
     }

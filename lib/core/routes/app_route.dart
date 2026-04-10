@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_products/Feature/home/presentation/screens/main_screen.dart';
 import 'package:water_products/Feature/onBorading/presentation/screens/on_boarding_screen.dart';
 
 import '../../Feature/auth/presentation/screens/login_screen.dart';
@@ -23,6 +24,12 @@ abstract class AppRoute {
         return BaseRoute(
           pageBuilder: (_, __, ___) {
             return LoginScreen();
+          },
+        );
+      case mainScreen:
+        return BaseRoute(
+          pageBuilder: (_, __, ___) {
+            return const MainScreen();
           },
         );
     }

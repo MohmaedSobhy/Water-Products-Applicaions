@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:water_products/Feature/auth/data/model/login_request_model.dart';
 import 'package:water_products/Feature/auth/data/model/register_request_model.dart';
 import 'package:water_products/Feature/auth/data/model/user_model.dart';
 import 'package:water_products/Feature/auth/data/repository/auth_respository_implmentation.dart';
@@ -19,13 +20,10 @@ class AuthCubit extends Cubit<AuthState> {
   late final AuthRespositoryImplmentation auth;
   final formKey = GlobalKey<FormState>();
 
-  void loginMethod() async {}
-
-  void registerMethod() async {
+  void loginMethod() async {
     emit(AuthLoadingState());
-    var result = await auth.register(
-      RegisterRequestModel(
-        userName: nameController.text,
+    var result = await auth.login(
+      LoginRequestModel(
         email: emailController.text,
         password: passwordController.text,
       ),
@@ -40,8 +38,27 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
+  void registerMethod() async {
+    emit(AuthLoadingState());
+    var result = await auth.register(
+      RegisterRequestModel(
+        userName: nameController.text,
+        email: emailController.text,
+        password: passwordController.text,
+        rePassword: passwordController.text,
+      ),
+    );
+
+    result.fold(
+      (failure) => {emit(AuthFailureState("Check User Name Or Email"))},
+      (user) async {
+        await saveToStorageHelper(user);
+        emit(AuthSuccessState());
+      },
+    );
+  }
+
   Future<void> saveToStorageHelper(UserModel user) async {
     await StorageHelper.saveAccessToken(user.token);
-    await StorageHelper.saveRefreshToken(user.refreshToken);
   }
 }
