@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       slivers: [
         const SliverAppBarView(),
         const SliverToBoxAdapter(child: ImageSliderView()),
+        const SliverToBoxAdapter(child: SizedBox(height: 10)),
         // SliverList.builder(
         //   itemCount: 10,
 

@@ -8,9 +8,7 @@ import 'all_products_state.dart';
 
 class AllProductCubit extends Cubit<AllProductState> {
   late final HomeRepositoryImplmentation homeRepo;
-  AllProductCubit() : super(AllProductInitialState()) {
-    homeRepo = GetItServices.getIt<HomeRepositoryImplmentation>();
-  }
+  AllProductCubit(this.homeRepo) : super(AllProductInitialState());
 
   void getAllProduct() async {
     emit(AllProductLoadingState());
