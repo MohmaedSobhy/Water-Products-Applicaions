@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_products/Feature/home/data/model/product_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ProductGridWidget extends StatelessWidget {
   final ProductModel productModel;
@@ -9,6 +10,7 @@ class ProductGridWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3,
+      clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,10 +20,14 @@ class ProductGridWidget extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(12),
               ),
-              child: Image.network(
-                productModel.imageCover,
-                width: double.infinity,
+              child: CachedNetworkImage(
+                imageUrl: productModel.imageCover,
                 fit: BoxFit.cover,
+                width: double.infinity,
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) =>
+                    const Center(child: Icon(Icons.error)),
               ),
             ),
           ),
