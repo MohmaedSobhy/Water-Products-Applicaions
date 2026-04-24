@@ -153,4 +153,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get favourite => 'المفضلة';
+
+  @override
+  String get noFavoritesTitle => 'لا توجد مفضلات بعد';
+
+  @override
+  String get noFavoritesSubtitle => 'ابدأ بإضافة المنتجات التي تحبها لتظهر هنا';
 }

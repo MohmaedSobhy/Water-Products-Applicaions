@@ -45,5 +45,7 @@
   "dontHaveAccount": "ليس لديك حساب؟",
   "haveAccount": "هل لديك حساب بالفعل؟",
   "login": "تسجيل الدخول",
-  "favourite": "المفضلة"
+  "favourite": "المفضلة",
+  "noFavoritesTitle": "لا توجد مفضلات بعد",
+  "noFavoritesSubtitle": "ابدأ بإضافة المنتجات التي تحبها لتظهر هنا"
 }

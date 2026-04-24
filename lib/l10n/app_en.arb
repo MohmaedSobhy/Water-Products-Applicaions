@@ -45,5 +45,7 @@
   "dontHaveAccount": "Don't have an account?",
   "haveAccount": "Already have an account?",
   "login": "Login",
-  "favourite" : "Favourite"
+  "favourite" : "Favourite",
+  "noFavoritesTitle": "No Favorites Yet",
+  "noFavoritesSubtitle": "Start adding products you love to see them here"
 }

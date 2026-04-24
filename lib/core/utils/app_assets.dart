@@ -30,4 +30,6 @@ abstract class AppImageAssets {
       "assets/lottie/second_on_boarding.json";
   static const String thirdonBoardingLottie =
       "assets/lottie/third_on_boarding.json";
+  static const String heartFavouriteLoading =
+      "assets/lottie/heart_favourite.json";
 }

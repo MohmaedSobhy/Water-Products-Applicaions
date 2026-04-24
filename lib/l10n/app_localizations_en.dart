@@ -154,4 +154,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get favourite => 'Favourite';
+
+  @override
+  String get noFavoritesTitle => 'No Favorites Yet';
+
+  @override
+  String get noFavoritesSubtitle =>
+      'Start adding products you love to see them here';
 }
