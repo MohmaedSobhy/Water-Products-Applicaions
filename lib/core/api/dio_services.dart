@@ -30,7 +30,7 @@ class DioHelper {
     String? token,
   }) async {
     try {
-      dio.options.headers = {'Authorization': 'Bearer ${token ?? ''}'};
+      dio.options.headers = {'token': '${token ?? ''}'};
       final Response response = await dio.get(
         url,
         queryParameters: queryParameters,

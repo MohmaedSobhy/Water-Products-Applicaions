@@ -4,6 +4,6 @@ abstract class EndPoints {
   static const String register = "${baseUrl}auth/signup";
   static const String allProduct = "${baseUrl}products";
   static const String allCategories = "${baseUrl}categories";
-  static const String addToFavourite = "${baseUrl}wishlist";
+  static const String favourite = "${baseUrl}wishlist";
   static const String addToCart = "${baseUrl}cart";
 }
