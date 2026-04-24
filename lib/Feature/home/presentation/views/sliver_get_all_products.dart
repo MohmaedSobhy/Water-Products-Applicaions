@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_products/Feature/home/data/repository/home_repository_implmentation.dart';
 import 'package:water_products/Feature/home/presentation/widgets/product_grid_widget.dart';
+import 'package:water_products/core/theme/app_colors.dart';
 
 import '../../../../core/services/get_it_services.dart';
 import '../controller/all product/all_product_cubit.dart';
@@ -21,10 +22,12 @@ class SliverGetAllProducts extends StatelessWidget {
       child: BlocBuilder<AllProductCubit, AllProductState>(
         builder: (context, state) {
           log("State is $state");
-          if (state is AllProductLoadingState) {
-            // shimer
+          if (state is AllProductLoadingState ||
+              state is AllProductInitialState) {
             return SliverToBoxAdapter(
-              child: Center(child: CircularProgressIndicator()),
+              child: Center(
+                child: CircularProgressIndicator(color: AppColor.primaryColor),
+              ),
             );
           }
           if (state is AllProductSuccessState) {
@@ -40,7 +43,7 @@ class SliverGetAllProducts extends StatelessWidget {
             );
           }
 
-          return SliverToBoxAdapter(child: Center(child: Text("All Product")));
+          return SliverToBoxAdapter(child: SizedBox());
         },
       ),
     );

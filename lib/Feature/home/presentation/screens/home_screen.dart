@@ -3,6 +3,7 @@ import 'package:water_products/Feature/home/presentation/views/image_slider_view
 import 'package:water_products/Feature/home/presentation/views/sliver_app_bar_view.dart';
 import 'package:water_products/Feature/home/presentation/views/sliver_get_all_products.dart'
     show SliverGetAllProducts;
+import 'package:water_products/Feature/home/presentation/views/sliver_get_category.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,13 +15,8 @@ class HomeScreen extends StatelessWidget {
         const SliverAppBarView(),
         const SliverToBoxAdapter(child: ImageSliderView()),
         const SliverToBoxAdapter(child: SizedBox(height: 10)),
-        // SliverList.builder(
-        //   itemCount: 10,
-
-        //   itemBuilder: (context, index) {
-        //     return ListTile(title: Text("Home Screen"));
-        //   },
-        // ),
+        const SliverGetCategory(),
+        const SliverToBoxAdapter(child: SizedBox(height: 10)),
         const SliverGetAllProducts(),
       ],
     );

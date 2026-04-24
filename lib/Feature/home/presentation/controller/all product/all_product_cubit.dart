@@ -8,15 +8,17 @@ class AllProductCubit extends Cubit<AllProductState> {
   AllProductCubit(this.homeRepo) : super(AllProductInitialState());
 
   void getAllProduct() async {
-    emit(AllProductLoadingState());
+    emit(AllProductLoadingState()); // Loading
 
     var result = await homeRepo.getAllProducts();
 
     result.fold(
       (failure) {
+        // Failure State
         emit(AllProductFailureState("Failed To Get Product"));
       },
       (product) {
+        // success All Products
         emit(AllProductSuccessState(product));
       },
     );

@@ -5,6 +5,14 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ListView(
+        children: [
+          const SizedBox(height: 20),
+          Center(child: Text("Setting Screen")),
+        ],
+      ),
+    );
   }
 }

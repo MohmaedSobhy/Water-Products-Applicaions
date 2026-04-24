@@ -6,9 +6,7 @@ import 'package:bloc/bloc.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
   late final HomeRepositoryImplmentation homeRepo;
-  CategoryCubit() : super(CategoryInitialState()) {
-    homeRepo = GetItServices.getIt<HomeRepositoryImplmentation>();
-  }
+  CategoryCubit(this.homeRepo) : super(CategoryInitialState());
 
   void getAllCategory() async {
     emit(CategoryLoadingState());
